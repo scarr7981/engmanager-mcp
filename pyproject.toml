@@ -1,6 +1,6 @@
 [project]
 name = "engmanager-mcp"
-version = "1.0.0"
+version = "1.0.1"
 description = "MCP server providing workflow guidance and next-step instructions for LLM development workflows"
 authors = [{name = "Simon Carr", email = "simon.carr@gmail.com"}]
 license = {text = "MIT"}
