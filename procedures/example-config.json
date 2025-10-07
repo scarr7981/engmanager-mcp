@@ -1,0 +1,10 @@
+{
+  "project_name": "example",
+  "procedure_file": "example-workflow.md",
+  "variables": {
+    "REPO_OWNER": "username",
+    "REPO_NAME": "repository",
+    "DEFAULT_BRANCH": "main",
+    "ISSUE_NUMBER": "42"
+  }
+}

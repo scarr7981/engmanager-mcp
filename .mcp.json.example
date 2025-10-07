@@ -1,0 +1,13 @@
+{
+	"mcpServers": {
+		"engmanager": {
+			"command": "/absolute/path/to/engmanager-mcp/.venv/bin/python",
+			"args": ["-m", "engmanager_mcp.server"],
+			"cwd": "/absolute/path/to/engmanager-mcp",
+			"env": {
+				"ENGMANAGER_DEFAULT_PROJECT": "example",
+				"ENGMANAGER_MCP_LOG_LEVEL": "DEBUG"
+			}
+		}
+	}
+}
