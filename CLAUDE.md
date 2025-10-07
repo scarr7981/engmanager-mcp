@@ -18,7 +18,7 @@ This file provides guidance to Claude Code when working with the Engineering Man
 
 ```
 engmanager-mcp/
-├── engmanager_mcp/           # Main package
+├── engmanager_mcp/           # Main package (included in PyPI)
 │   ├── __init__.py
 │   ├── server.py            # MCP server entry point
 │   ├── config/
@@ -34,15 +34,18 @@ engmanager-mcp/
 │       ├── __init__.py
 │       ├── parser.py         # Template parser
 │       └── errors.py         # Custom exceptions
-├── procedures/               # Example procedures
-│   ├── example-workflow.md
-│   └── example-config.json
-├── pyproject.toml           # Python packaging
+├── procedures/               # Example procedures (EXCLUDED from PyPI)
+│   ├── .gitkeep
+│   ├── example-workflow.md  # Only in GitHub repo
+│   └── example-config.json  # Only in GitHub repo
+├── pyproject.toml           # Python packaging (excludes procedures/)
 ├── requirements.txt
 ├── README.md
 ├── LICENSE
 └── test_server.py           # Test suite
 ```
+
+**Important:** The `procedures/` directory is excluded from the PyPI package (see `pyproject.toml` line 54). Users must create their own workflow files in `~/.config/engmanager-mcp/` or other supported locations.
 
 ## Key Components
 
@@ -122,9 +125,11 @@ python test_server.py
 ### Project Configuration Format
 
 Files should be named `<project>-config.json` and placed in:
-- `./procedures/`
-- `~/.config/engmanager-mcp/`
-- `/etc/engmanager-mcp/`
+- `./procedures/` (local development only - excluded from PyPI)
+- `~/.config/engmanager-mcp/` (recommended for users)
+- `/etc/engmanager-mcp/` (system-wide)
+
+**Note:** When developing the package locally, you can use `./procedures/` for testing. However, end users installing via PyPI must create configs in `~/.config/engmanager-mcp/` since the `procedures/` directory is not included in the package.
 
 ```json
 {

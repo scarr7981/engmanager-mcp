@@ -51,7 +51,7 @@ build-backend = "setuptools.build_meta"
 [tool.setuptools.packages.find]
 where = ["."]
 include = ["engmanager_mcp*"]
-exclude = ["procedures*"]
+exclude = ["procedures*"]  # Excluded from PyPI - users create their own in ~/.config/engmanager-mcp/
 
 [tool.black]
 line-length = 100

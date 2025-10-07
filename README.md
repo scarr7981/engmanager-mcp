@@ -202,18 +202,22 @@ Define custom variables in your project's config file.
 
 ## 📁 Project Structure
 
+**Important:** The `procedures/` directory is **excluded from the PyPI package**. When you install via `uvx engmanager-mcp`, you need to create your own workflow files in one of these locations:
+
 ```
-~/.config/engmanager-mcp/
-├── myproject-config.json       # Project configuration
-├── myproject-workflow.md       # Workflow procedure
+~/.config/engmanager-mcp/          # Recommended for user-specific workflows
+├── myproject-config.json          # Project configuration
+├── myproject-workflow.md          # Workflow procedure
 ├── another-project-config.json
 └── another-project-workflow.md
 ```
 
-**Alternative locations:**
-- `./procedures/` (relative to current directory)
-- `~/.config/engmanager-mcp/` (user config)
-- `/etc/engmanager-mcp/` (system-wide)
+**Configuration file locations (searched in order):**
+1. `./procedures/` (relative to current directory - for local development)
+2. `~/.config/engmanager-mcp/` (user config - **recommended**)
+3. `/etc/engmanager-mcp/` (system-wide)
+
+**Note:** Example files (`example-config.json`, `example-workflow.md`) are only available in the [GitHub repository](https://github.com/scarr7981/engmanager-mcp/tree/main/procedures) for reference, not in the PyPI package.
 
 ## ⚙️ Configuration
 
